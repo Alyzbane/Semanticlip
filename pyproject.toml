@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "semanticlip"
+version = "0.1.0"
+description = ""
+authors = ["alyzbane <alyzbane@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+sentence-transformers =  "^3.3.1"
+qdrant-client = "^1.12.0"
+fastapi = "^0.115.0"
+uvicorn = "^0.34.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
