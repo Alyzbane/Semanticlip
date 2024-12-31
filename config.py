@@ -1,13 +1,16 @@
 import os
 from qdrant_client import QdrantClient
 from fastembed import ImageEmbedding, TextEmbedding
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def get_qdrant_client():
     try:
-        # First try HTTP connection
+        # Try HTTP connection
         client = QdrantClient(
-            url=os.getenv("QDRANT_DB_URL", "http://localhost:6333"),
-            timeout=5  # Add timeout
+            url=os.getenv("DB_URL"),
+            timeout=5
         )
         # Test connection
         client.get_collections()
@@ -18,7 +21,7 @@ def get_qdrant_client():
         return QdrantClient(":memory:")
 
 
-collection_name = os.getenv("QDRANT_DB_NAME", "image_collection")
+collection_name = os.getenv("DB_NAME")
 
 image_model_name = "Qdrant/clip-ViT-B-32-vision"
 image_model = ImageEmbedding(model_name=image_model_name)
