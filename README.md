@@ -1,4 +1,4 @@
-# SemanticCLIP Image Search
+# Semanticlip Image Search
 
 A semantic image search application using CLIP embeddings and Qdrant vector database. Search through your local image collection using natural language queries.
 
